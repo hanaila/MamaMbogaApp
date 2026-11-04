@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="?attr/colorOutlineVariant"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥬"
+            android:textSize="36sp"
+            android:layout_marginBottom="4dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sukuma Wiki"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KES 30 / bunch"
+            android:textSize="12sp"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
+
+        <CheckBox
+            android:id="@+id/cbSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:textSize="12sp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            android:clickable="false"
+            android:focusable="false"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

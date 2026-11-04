@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Mama Mboga Fresh"
+            app:titleTextColor="?attr/colorOnPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Welcome Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello, welcome to my fresh farm produce! 🥦🍅"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="4dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get fresh vegetables and fruits delivered straight from the farm to your kitchen with love by Mama Mboga."
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ITEMS Section Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ITEMS"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
+
+            <!-- RecyclerView for Items Grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_grocery"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Order Summary Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order Summary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tvCartSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No items selected yet."
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="8dp"
+                        tools:text="• Sukuma Wiki (x1) - KES 30\n• Tomatoes (x1) - KES 50"
+                        tools:ignore="HardcodedText" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?attr/colorOutlineVariant"
+                        android:layout_marginBottom="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Amount:"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tvTotalPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KES 0"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorPrimary"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPurchase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Place Order / Purchase"
+                        app:cornerRadius="12dp"
+                        android:padding="12dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Socials Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect with Mama Mboga (Socials)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <!-- Instagram -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnInstagram"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_margin="8dp"
+                    android:text="I"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:iconGravity="textStart"
+                    app:cornerRadius="28dp"
+                    tools:ignore="SpeakableTextPresentCheck,HardcodedText" />
+
+                <!-- Facebook -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFacebook"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_margin="8dp"
+                    android:text="F"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp"
+                    tools:ignore="SpeakableTextPresentCheck,HardcodedText" />
+
+                <!-- Twitter / X -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTwitter"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_margin="8dp"
+                    android:text="T"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp"
+                    tools:ignore="SpeakableTextPresentCheck,HardcodedText" />
+
+                <!-- WhatsApp -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnWhatsapp"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_margin="8dp"
+                    android:text="W"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp"
+                    tools:ignore="SpeakableTextPresentCheck,HardcodedText" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
